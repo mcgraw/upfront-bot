@@ -11,7 +11,9 @@ class Bomb
 	match /bomb play$/, method: :play
 	match /bomb cut (.+)?/, method: :cut
 	match /bomb leaderboard/, method: :leaderboard
-	match /bomb reset$/, method: :reset_all
+	match /bomb reset$/, method: :reset_player
+
+	@@debug = 0
 
 	@@time_limit = -1
 	@@player   = nil
@@ -22,19 +24,18 @@ class Bomb
 
 	def help(m)
 		# show help
-		m.reply "This is BOMB. Cut the correct wire, earn " + @@prize.to_s + "!!!"
-		m.reply "Available commands --"
-		m.reply "!bomb play - We'll pass you over a bomb that needs dealt with"
-		m.reply "!bomb cut <color> - Pick a color! Current colors: " + @@colors.join(', ')
-		m.reply "!bomb stat - See how you're doing"
-		m.reply "!bomb leaderboard - Who is KING BOMB?"
+		m.reply "This is BOMB. Cut the correct wire, earn $" + @@prize.to_s + "!!!"
+		m.reply "--| !bomb play - We'll pass you over a bomb that needs dealt with"
+		m.reply "--| !bomb cut <color> - Pick a color! Current colors: " + @@colors.join(', ')
+		m.reply "--| !bomb stat - See how you're doing"
+		m.reply "--| !bomb leaderboard - Who is KING BOMB?"
 	end
 
 	def stat(m) 
 		player = find_player(m, m.user.nick)
 		if player
 			total = player.bombs_diffused.to_i + player.bombs_failed.to_i
-			m.reply "Welcome back to Bomb " + player.name + ". $" + player.money.to_s + " remaining. Total plays: " + total.to_s + ". You have diffused " + player.bombs_diffused.to_s + " bombs, failed " + player.bombs_failed.to_s + " times." 
+			m.reply "Welcome back to BOMB " + player.name + ". $" + player.money.to_s + " remaining. Total plays: " + total.to_s + ". You have diffused " + player.bombs_diffused.to_s + " bombs, failed " + player.bombs_failed.to_s + " times." 
 		else
 			m.reply "It appears you are new. Try to not blow everything up, mmk? Type '!bomb play' to begin."
 		end
@@ -63,7 +64,10 @@ class Bomb
 				m.reply @@player.name + " recieves the bomb. You have " + @@time.to_s + " seconds to deffuse it using by cutting the right cable. Choose you destiny (type !bomb cut <choice>): " + @@colors.join(', ')
 				@@time_limit = Timer(@@time, { :method => :diffuse_failed, :shots => 1 })
 
-				m.reply "[DEBUG] solution: " + @@player.bombs_solution
+				if @@debug == 1
+					m.reply "[DEBUG] solution: " + @@player.bombs_solution
+				end
+
 				@@player.save
 			else 
 				m.reply "Um, you may want to diffuse the bomb you already have..."
@@ -80,10 +84,17 @@ class Bomb
 
 			if color == @@player.bombs_solution
 				@@player.money = @@player.money.to_i + @@prize
-				m.reply "Give " + @@player.name + " a pat on the back for not blowing everything up! Awarding $" + @@prize.to_s + "!"
+				@@player.bombs_diffused += 1
+				m.reply "GOT IT! Give " + @@player.name + " a pat on the back for not blowing everything up! Awarding $" + @@prize.to_s + "! " + @@player.money.to_s + " available" 
 			else
 				@@player.money = @@player.money.to_i - @@penalty 
-				m.reply "Sadly, " + @@player.name + " cut the wrong wire! It was " + @@player.bombs_solution + ". Taking $" + @@penalty.to_s + " to cover damages!"
+				@@player.bombs_failed += 1
+
+				if @@player.money < 0
+					@@player.money = 0
+				end
+
+				m.reply "Sadly, " + @@player.name + " cut the wrong wire! It was " + @@player.bombs_solution + ". Taking $" + @@penalty.to_s + " to cover damages! $" + @@player.money.to_s + " remaining."
 			end
 
 			@@player.bombs_solution = nil
@@ -92,19 +103,17 @@ class Bomb
 		end
 	end
 
-	def reset_all(m)
-		# return if m.user.nick != "mcgraw" # admin only
-
+	def reset_player(m)
 		player = find_player(m, m.user.nick)
+		return if !player
+
 		player.bombs_solution = nil
 		player.bombs_failed = 0
 		player.bombs_diffused = 0
 		player.money = 500
 		player.save
 
-		if @@player.name == m.user.nick
-			@@player = nil;
-		end
+		@@player = nil;
 
     	m.reply "Reset " + player.name
 	end

@@ -1,0 +1,25 @@
+# Logfile created on 2014-03-13 08:30:35 -0500 by logger.rb/44203
+I, [2014-03-13T08:30:35.157715 #13635]  INFO -- : 0:  addressable (2.3.5) from /Users/mcgraw/.rvm/gems/ruby-2.1.0/specifications/addressable-2.3.5.gemspec
+I, [2014-03-13T08:30:35.968342 #13635]  INFO -- : 0:  multi_json (1.8.0) from /Users/mcgraw/.rvm/gems/ruby-2.1.0/specifications/multi_json-1.8.0.gemspec
+I, [2014-03-13T08:30:36.340673 #13635]  INFO -- : 0:  multi_xml (0.5.5) from /Users/mcgraw/.rvm/gems/ruby-2.1.0/specifications/multi_xml-0.5.5.gemspec
+I, [2014-03-13T08:30:37.347568 #13635]  INFO -- : 0:  httparty (0.11.0) from /Users/mcgraw/.rvm/gems/ruby-2.1.0/specifications/httparty-0.11.0.gemspec
+I, [2014-03-13T08:30:37.708358 #13635]  INFO -- : 0:  multipart-post (1.2.0) from /Users/mcgraw/.rvm/gems/ruby-2.1.0/specifications/multipart-post-1.2.0.gemspec
+I, [2014-03-13T08:30:38.409212 #13635]  INFO -- : 0:  faraday (0.8.8) from /Users/mcgraw/.rvm/gems/ruby-2.1.0/specifications/faraday-0.8.8.gemspec
+I, [2014-03-13T08:30:38.737356 #13635]  INFO -- : 0:  httpauth (0.2.0) from /Users/mcgraw/.rvm/gems/ruby-2.1.0/specifications/httpauth-0.2.0.gemspec
+I, [2014-03-13T08:30:39.492662 #13635]  INFO -- : 0:  jwt (0.1.8) from /Users/mcgraw/.rvm/gems/ruby-2.1.0/specifications/jwt-0.1.8.gemspec
+I, [2014-03-13T08:30:39.492990 #13635]  INFO -- : 0:  rack (1.5.2) from /Users/mcgraw/.rvm/gems/ruby-2.1.0@global/specifications/rack-1.5.2.gemspec
+I, [2014-03-13T08:30:40.379756 #13635]  INFO -- : 0:  oauth2 (0.8.1) from /Users/mcgraw/.rvm/gems/ruby-2.1.0/specifications/oauth2-0.8.1.gemspec
+I, [2014-03-13T08:30:41.637729 #13635]  INFO -- : 0:  bitly (0.9.0) from /Users/mcgraw/.rvm/gems/ruby-2.1.0/specifications/bitly-0.9.0.gemspec
+I, [2014-03-13T08:30:42.849008 #13635]  INFO -- : 0:  cinch (2.0.4) from /Users/mcgraw/.rvm/gems/ruby-2.1.0/specifications/cinch-2.0.4.gemspec
+I, [2014-03-13T08:30:45.028157 #13635]  INFO -- : 0:  cinch-identify (1.5.1) from /Users/mcgraw/.rvm/gems/ruby-2.1.0/specifications/cinch-identify-1.5.1.gemspec
+I, [2014-03-13T08:30:45.595347 #13635]  INFO -- : 0:  data_objects (0.10.13) from /Users/mcgraw/.rvm/gems/ruby-2.1.0/specifications/data_objects-0.10.13.gemspec
+I, [2014-03-13T08:30:46.913870 #13635]  INFO -- : 0:  dm-core (1.2.1) from /Users/mcgraw/.rvm/gems/ruby-2.1.0/specifications/dm-core-1.2.1.gemspec
+I, [2014-03-13T08:30:47.300469 #13635]  INFO -- : 0:  dm-do-adapter (1.2.0) from /Users/mcgraw/.rvm/gems/ruby-2.1.0/specifications/dm-do-adapter-1.2.0.gemspec
+I, [2014-03-13T08:30:47.801533 #13635]  INFO -- : 0:  dm-migrations (1.2.0) from /Users/mcgraw/.rvm/gems/ruby-2.1.0/specifications/dm-migrations-1.2.0.gemspec
+I, [2014-03-13T08:30:50.886577 #13635]  INFO -- : 0:  do_sqlite3 (0.10.13) from /Users/mcgraw/.rvm/gems/ruby-2.1.0/specifications/do_sqlite3-0.10.13.gemspec
+I, [2014-03-13T08:30:51.344022 #13635]  INFO -- : 0:  dm-sqlite-adapter (1.2.0) from /Users/mcgraw/.rvm/gems/ruby-2.1.0/specifications/dm-sqlite-adapter-1.2.0.gemspec
+I, [2014-03-13T08:30:51.735613 #13635]  INFO -- : 0:  dm-timestamps (1.2.0) from /Users/mcgraw/.rvm/gems/ruby-2.1.0/specifications/dm-timestamps-1.2.0.gemspec
+I, [2014-03-13T08:30:52.165857 #13635]  INFO -- : 0:  inifile (2.0.2) from /Users/mcgraw/.rvm/gems/ruby-2.1.0/specifications/inifile-2.0.2.gemspec
+I, [2014-03-13T08:30:52.568188 #13635]  INFO -- : 0:  pastie-api (0.2.1) from /Users/mcgraw/.rvm/gems/ruby-2.1.0/specifications/pastie-api-0.2.1.gemspec
+I, [2014-03-13T08:30:52.568562 #13635]  INFO -- : 0:  sqlite3 (1.3.8) from /Users/mcgraw/.rvm/gems/ruby-2.1.0/specifications/sqlite3-1.3.8.gemspec
+I, [2014-03-13T08:30:52.568786 #13635]  INFO -- : 0:  bundler (1.5.1) from /Users/mcgraw/.rvm/gems/ruby-2.1.0@global/specifications/bundler-1.5.1.gemspec
